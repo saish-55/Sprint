@@ -10,7 +10,7 @@ const Select = () => {
   const navigation = useNavigation();
   return (
     <SafeAreaView className = "bg-black h-full">
-        <ScrollView>
+        <ScrollView className="mt-1">
         <View>
             <Image
                 source={require('../assets/Sprint.png')}
