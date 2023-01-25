@@ -1,6 +1,6 @@
 import { View, Text, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import AnimatedLottieView from 'lottie-react-native'
+import LottieView from 'lottie-react-native'
 import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons"
 import { SelectList } from 'react-native-dropdown-select-list'
@@ -76,7 +76,7 @@ const UserDashBoard = () => {
           
 
             <Animatable.View animation={'fadeIn'} easing={'ease-in-out'} className=" h-64 bottom-8 w-full ">       
-                <AnimatedLottieView source={require('../assets/examples/106689-cycle.json')} autoPlay loop />
+                <LottieView source={require('../assets/examples/106689-cycle.json')} autoPlay loop />
             </Animatable.View>
 
 

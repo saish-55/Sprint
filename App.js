@@ -6,6 +6,7 @@ import Login from './screens/Login';
 import Select from './screens/Select';
 import UserDashBoard from './screens/UserDashBoard';
 import Venue from './components/Venue';
+import Rules from './components/Rules';
 
 //remove heroicons, animations save in assests
 
@@ -19,6 +20,7 @@ export default function App() {
       <Stack.Screen name="selects" component={UserDashBoard} options={{ animation: 'slide_from_bottom', headerShown: false,}}  />
       <Stack.Screen name="login" component={Login} options={{ animation: 'slide_from_bottom', headerShown: false }} />
       <Stack.Screen name="venue" component={Venue} options={{ animation: 'slide_from_bottom', headerShown: false }} />
+      <Stack.Screen name="rule" component={Rules} options={{  presentation:'modal' ,animation: 'slide_from_bottom', headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
       

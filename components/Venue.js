@@ -4,8 +4,10 @@ import { useRoute } from '@react-navigation/native'
 import { urlFor } from '../sanity';
 import * as Animatable from 'react-native-animatable';
 import Ionicons from "@expo/vector-icons/Ionicons"
+import { useNavigation } from '@react-navigation/native';
+import LottieView from 'lottie-react-native'
 
-// add maap address in sanity call here // aminities issue // venue rules next popup page // courts entry
+// add maap address in sanity call here // aminities issue // venue rules next popup page // courts entry/ update venue rules // backscreen button
 const Venue = () => {
     const { params: {
         id,
@@ -23,6 +25,7 @@ const Venue = () => {
         rule
     },} = useRoute();
 
+    const navigation = useNavigation();
   return (
     <ScrollView className="bg-gray-800" >
     
@@ -46,9 +49,12 @@ const Venue = () => {
       <View className=" flex-row items-center">
       <Text className="w-40 mt-1 mx-5 italic text-gray-400 text-xs ">{locationbreif}</Text>
 
-        <TouchableOpacity className="absolute inset-y-0 right-0 -mt-2 mr-4 flex-row space-x-1 items-center border w-16 h-8 justify-center rounded-xl border-[#00fff7a0] ">
-        <Text className="text-gray-300 text-xs">Maps</Text>
-        <Ionicons size={15} color={"#00FFF6"} name="locate-outline"></Ionicons>
+        <TouchableOpacity className="absolute inset-y-0 right-0 -mt-2 mr-4 flex-row space-x-1 items-center border w-16 h-8  rounded-3xl border-[#00fff7a0] ">
+        <Text className="text-gray-300 text-xs ml-3 ">Map</Text>
+        
+        <View className="absolute mt-9 h-5 w-5 mr-1 right-0">
+        <LottieView source={require('../assets/examples/dot notification 2.json')} autoPlay loop />
+        </View>
         </TouchableOpacity>
       </View>
       </View>
@@ -58,13 +64,13 @@ const Venue = () => {
           <Text className=" mt-1 mx-5 italic text-gray-400 text-xs">{amenity}</Text>
       </View>
 
-      <View className="mx-2 bg-gray-900 rounded-3xl h-16 mt-3 ">
+      <TouchableOpacity onPress={() => navigation.navigate('rule')} className="mx-2 bg-gray-900 rounded-3xl h-16 mt-3 ">
       <Text className=" ml-4 mt-2 text-base text-gray-200 font-semibold">Venue Rules</Text>
         <View className="absolute mt-6 mr-6 right-0">
           <Ionicons size={18} color={"#00FFF6"} name="chevron-forward-outline"></Ionicons>
           </View>
         <Text className=" mt-1 mx-5 italic text-gray-400 text-xs">{rule}</Text>
-      </View>
+      </TouchableOpacity>
 
       <View className="mx-2 bg-gray-900 rounded-3xl h-96 mt-3 "></View>
       <View className="mx-2 bg-gray-900 rounded-3xl h-96 mt-3 "></View>
